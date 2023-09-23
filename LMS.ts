@@ -1,4 +1,3 @@
-// app.ts
 import inquirer from "inquirer";
 import { Course } from "./course.js";
 import { Student } from "./student.js";
@@ -7,13 +6,11 @@ import chalk from "chalk";
 const courses: Course[] = [];
 const students: Student[] = [];
 
-function addStudent() {
-    inquirer
-        .prompt([
+function addStudent() { inquirer.prompt([
             {
                 type: "input",
                 name: "name",
-                message: "Enter student name:",
+                message: (chalk.yellow("Enter student Name:")),
             },
         ])
         .then((answers) => {
@@ -25,8 +22,7 @@ function addStudent() {
 }
 
 function enrollStudent() {
-    inquirer
-        .prompt([
+    inquirer.prompt([
             {
                 type: "input",
                 name: "id",
@@ -61,8 +57,7 @@ function enrollStudent() {
 }
 
 function viewStudentStatus() {
-    inquirer
-        .prompt([
+    inquirer.prompt([
             {
                 type: "input",
                 name: "id",
@@ -81,8 +76,7 @@ function viewStudentStatus() {
 }
 
 function addBalance() {
-    inquirer
-        .prompt([
+    inquirer.prompt([
             {
                 type: "input",
                 name: "id",
@@ -105,9 +99,8 @@ function addBalance() {
         });
 }
 
-function payTuition() {
-    inquirer
-        .prompt([
+function payTuitionFee() {
+    inquirer.prompt([
             {
                 type: "input",
                 name: "id",
@@ -122,7 +115,7 @@ function payTuition() {
         .then((answers) => {
             const student = students.find((s) => s.studentId === answers.id);
             if (student) {
-                student.payTuition(parseFloat(answers.amount));
+                student.payTuitionFee(parseFloat(answers.amount));
             } else {
                 console.log(chalk.red("Student not found."));
             }
@@ -131,8 +124,7 @@ function payTuition() {
 }
 
 function showMenu() {
-    inquirer
-        .prompt([
+    inquirer.prompt([
             {
                 type: "list",
                 name: "choice",
@@ -155,7 +147,7 @@ function showMenu() {
                     addBalance();
                     break;
                 case "Pay Tuition":
-                    payTuition();
+                    payTuitionFee();
                     break;
                 case "Quit":
                     break;

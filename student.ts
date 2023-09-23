@@ -37,7 +37,7 @@ export class Student {
         }
     }
 
-    payTuition(amount: number) {
+    payTuitionFee(amount: number) {
         if (amount > 0) {
             if (amount <= this.balance) {
                 this.balance -= amount;
