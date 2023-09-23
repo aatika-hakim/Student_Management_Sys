@@ -17,6 +17,7 @@ package-lock.json
 .vscode/
 
 # Ignore any files or directories created during development/build
+dist/
 build/
 tmp/
 .cache/
