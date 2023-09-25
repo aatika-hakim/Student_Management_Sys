@@ -1,19 +1,22 @@
 {
-  "name": "atika-lms",
-  "version": "1.1.0",
+  "name": "student-management-sys",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": "./index.js",
+  "bin": {
+    "std-management-sys": "dist/index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.3.0",
-    "inquirer": "^9.2.11"
+    "inquirer": "^9.2.11",
+    "student-management-sys": "^1.2.0"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.3"
